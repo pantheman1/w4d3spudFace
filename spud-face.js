@@ -35,21 +35,36 @@ licenseForm.addEventListener("input", event => {
 
 
   // ** Phase 2: Add focus and blur events to form inputs **
-  const input = document.getElementsById("drivers-license-form")
+  const inputs = document.querySelectorAll(".form__input");
 
-  input.addEventListener("focus", event => {
-    event.target.style.backgroundColor = 'red';
+  inputs.forEach(input => {
+    input.addEventListener("focus", event => {
+      event.target.style.backgroundColor = 'lightgreen';
+    })
+  
+    input.addEventListener("blur", event => {
+      event.target.style.backgroundColor = "initial";
+    })
   })
 
-  input.addEventListener("blur", event => {
-    event.target.style.backgroundColor = "initial";
-  })
 
 
 
   // ** Phase 3: Check that license numbers match **
+const licenseNum = document.getElementById("license-num");
+const confirmNum = document.getElementById("license-num-confirm");
 
+const checkPassword = event => {
+  if (licenseNum.value !== confirmNum.value) {
+    licenseNum.style.backgroundColor = "lightcoral";
+    confirmNum.style.backgroundColor = "lightcoral";
+  }
+}
 
+confirmNum.addEventListener("input", event => {
+  setTimeout(checkPassword, 3000)
+
+})
   // ** Phase 4: Update submit button click count **
 
 
