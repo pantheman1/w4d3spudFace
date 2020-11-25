@@ -20,27 +20,37 @@ licenseForm.addEventListener("input", event => {
   })
 })
 
-  const inputList = document.querySelectorAll(".form__input");
+  // const inputList = document.querySelectorAll(".form__input");
 
-  console.log(inputList);
-  console.log(licenseInfo);
+  // console.log(inputList);
+  // console.log(licenseInfo);
 
-  const title = document.getElementById("title")
-  const firstName = document.getElementById('first-name')
-  const lastName = document.getElementById('last-name')
-  const eyeColor = document.getElementById('eye-color')
-  const height = document.getElementById('height')
+  // const title = document.getElementById("title")
+  // const firstName = document.getElementById('first-name')
+  // const lastName = document.getElementById('last-name')
+  // const eyeColor = document.getElementById('eye-color')
+  // const height = document.getElementById('height')
 
-  // ** Phase 1B: Update license with event delegation and event.target ** 
+  // ** Phase 1B: Update license with event delegation and event.target **
 
 
   // ** Phase 2: Add focus and blur events to form inputs **
- 
+  const input = document.getElementsById("drivers-license-form")
+
+  input.addEventListener("focus", event => {
+    event.target.style.backgroundColor = 'red';
+  })
+
+  input.addEventListener("blur", event => {
+    event.target.style.backgroundColor = "initial";
+  })
+
+
 
   // ** Phase 3: Check that license numbers match **
- 
+
 
   // ** Phase 4: Update submit button click count **
 
- 
+
 });
