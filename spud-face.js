@@ -41,7 +41,7 @@ licenseForm.addEventListener("input", event => {
     input.addEventListener("focus", event => {
       event.target.style.backgroundColor = 'lightgreen';
     })
-  
+
     input.addEventListener("blur", event => {
       event.target.style.backgroundColor = "initial";
     })
@@ -66,6 +66,13 @@ confirmNum.addEventListener("input", event => {
 
 })
   // ** Phase 4: Update submit button click count **
+const button = document.getElementById("submit-button");
 
+let clicks = 0;
+button.addEventListener("click", event => {
+  clicks++;
+  event.preventDefault();
+  button.innerHTML = `Submit - ${clicks}`
+})
 
 });
